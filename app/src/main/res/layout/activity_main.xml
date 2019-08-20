@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.k3mshiro.demofocus.CustomConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/leftMenu"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#2196F3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/leftButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="Left"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/rightButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/bg_button"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="Right"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/leftButton"
+            app:layout_constraintTop_toTopOf="@+id/leftButton" />
+
+
+        <Button
+            android:id="@+id/bottomButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="Bottom"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leftButton" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="20dp"
+        android:background="#2196F3"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@id/leftMenu"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvContent"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spacer" />
+
+
+</com.k3mshiro.demofocus.CustomConstraintLayout>
